@@ -134,14 +134,14 @@ historicalDataButton.addEventListener('click', () => {
         let html = `<table><caption>Historical Weather Data from ${startDate} to ${endDate}</caption><tr><th>Date</th><th>Max Temperature</th><th>Min Temperature</th><th>Mean Temperature</th><th>Sunrise</th><th>Sunset</th><th>Precipitation Sum</th></tr>`;
         for (let i = 0; i < historicalData.time.length; i++) {
           html += `<tr>
-            <td>${categories[i]}</td>
-            <td>${maxTemps[i]}°C</td>
-            <td>${minTemps[i]}°C</td>
-            <td>${meanTemps[i]}°C</td>
-            <td>${new Date(historicalData.sunrise[i]).toLocaleTimeString()}</td>
-            <td>${new Date(historicalData.sunset[i]).toLocaleTimeString()}</td>
-            <td>${historicalData.precipitation_sum[i]} mm</td>
-          </tr>`;
+          <td data-label="Date">${categories[i]}</td>
+          <td data-label="Max Temperature">${maxTemps[i]}°C</td>
+          <td data-label="Min Temperature">${minTemps[i]}°C</td>
+          <td data-label="Mean Temperature">${meanTemps[i]}°C</td>
+          <td data-label="Sunrise">${new Date(historicalData.sunrise[i]).toLocaleTimeString()}</td>
+          <td data-label="Sunset">${new Date(historicalData.sunset[i]).toLocaleTimeString()}</td>
+          <td data-label="Precipitation Sum">${historicalData.precipitation_sum[i]} mm</td>
+        </tr>`;
         }
         html += '</table>';
         document.getElementById('historical-table').innerHTML = html;
@@ -205,12 +205,12 @@ forecastButton.addEventListener('click', () => {
         let html = '<table><caption>7-Day Weather Forecast</caption><tr><th>Date</th><th>Max Temperature</th><th>Min Temperature</th><th>Sunrise</th><th>Sunset</th><th>UV Index Max</th></tr>';
         for (let i = 0; i < forecastData.time.length; i++) {
           html += `<tr>
-            <td>${categories[i]}</td>
-            <td>${maxTemps[i]}°C</td>
-            <td>${minTemps[i]}°C</td>
-            <td>${new Date(forecastData.sunrise[i]).toLocaleTimeString()}</td>
-            <td>${new Date(forecastData.sunset[i]).toLocaleTimeString()}</td>
-            <td>${forecastData.uv_index_max[i]}</td>
+          <td data-label="Date">${categories[i]}</td>
+          <td data-label="Max Temperature">${maxTemps[i]}°C</td>
+          <td data-label="Min Temperature">${minTemps[i]}°C</td>
+          <td data-label="Sunrise">${new Date(forecastData.sunrise[i]).toLocaleTimeString()}</td>
+          <td data-label="Sunset">${new Date(forecastData.sunset[i]).toLocaleTimeString()}</td>
+          <td data-label="UV Index Max">${forecastData.uv_index_max[i]}</td>
           </tr>`;
         }
         html += '</table>';
