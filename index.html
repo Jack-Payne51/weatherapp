@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Weather Dashboard</h1>
+    <div class="search-box">
+      <input type="text" id="location-input" placeholder="Enter city name">
+      <button id="search-button" class="searchbtn">Search</button>
+    </div>
+    <div class="date-inputs">
+        <h4>Input dates for historical data (updated until 02/08/2023) </h4>
+        <input type="date" id="start-date" placeholder="Start Date">
+        <input type="date" id="end-date" placeholder="End Date">
+        <div class="date-buttons">
+            <button class="btn date-btn" data-range="month">Past Month</button>
+            <button class="btn date-btn" data-range="year">Past Year</button>
+            <!-- Add more buttons as needed -->
+        </div>
+    </div>
+    <div class="button-group">
+      <button id="current-location-button" class="btn">Use Current Location</button>
+      <button id="historical-data-button" class="btn">Get Historical Data</button>
+      <button id="forecast-button" class="btn">Get 7-Day Forecast</button>
+    </div>
+    <div id="weather-info" class="card hide">
+      <h2 id="location-name"></h2>
+      <p id="temperature"></p>
+      <p id="description"></p>
+    </div>
+    <div id="forecast-data" class="hide">
+        <h2>7-Day Weather Forecast</h2>
+        <div id="forecast-chart" class="card"></div>
+        <div id="forecast-table" class="card"></div>
+    </div>
+    <div id="historical-data" class="hide">
+      <h2>Historical Weather Data</h2>
+      <div id="historical-weather-info" class="card"></div>
+      <div id="historical-chart" class="card"></div>
+      <div id="historical-table" class="card"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
